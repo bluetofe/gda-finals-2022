@@ -1,0 +1,28 @@
+.slick-slider{
+  .slick-slide{
+  }
+  .project{
+    padding: 0 20px;
+  }
+  .slick-arrow{
+    &.slick-next{
+      position: absolute;
+      right: 10px;
+      z-index: 9;
+    }
+    &.slick-prev{
+      position: absolute;
+      left: 10px;
+      z-index: 9;
+    }
+  }
+  .image{
+    height: 60vh;
+    overflow: hidden;
+    img{
+      object-fit: cover;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+}
