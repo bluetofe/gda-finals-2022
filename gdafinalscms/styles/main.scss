@@ -1,10 +1,28 @@
+.menu{
+  padding: 10px 10px;
+  display: flex;
+  width: 100%;
+  .menu-item{
+    padding: 5px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    &:nth-child(2){
+      display: block;
+      margin: 0 auto;
+    }
+    &:nth-child(3){
+      margin-left: 160px;
+    }
+  }
+}
+
+
 .slick-slider{
-  .slick-slide{
-  }
-  .project{
-    padding: 0 20px;
-  }
+  margin-top: 14px;
+  .slick-list {margin: 0 -24px;}
+  .slick-slide>div {padding: 0 24px;}
   .slick-arrow{
+    margin-top: -20px;
     &.slick-next{
       position: absolute;
       right: 10px;
@@ -15,14 +33,73 @@
       left: 10px;
       z-index: 9;
     }
+    &.slick-next:before, &.slick-prev:before{
+      color:#05CE81;
+    }
+  }
+  .slick-dots{
+    bottom: -70px;
+    li{
+      width: 40px;
+      text-align: center;
+    }
+  }
+  .slick-active .order{
+    margin-top: -30px;
+    div{
+      font-size: 40px;
+    }
+  }
+  .order {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    transition: all 0.4s ease;
+    div{
+      font-size: 30px;
+      &:nth-child(2){
+        font-size: smaller;
+      }
+    }
   }
   .image{
-    height: 60vh;
+    height: 65vh;
     overflow: hidden;
+    border: 1px solid black;
     img{
       object-fit: cover;
       min-width: 100%;
       min-height: 100%;
     }
+  }
+  .info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .name{
+    flex-shrink: 1;
+    padding-right: 24px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .line{
+    flex-grow: 1;
+    border-top: 2px solid black;
+  }
+  .title{
+    flex-shrink: 1;
+    padding-left: 24px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .description{
+    width: 100%;
+    color: #05CE81;
+    margin-top: 10px;
+    column-count: 2;
   }
 }

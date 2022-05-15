@@ -1,16 +1,27 @@
 import { Footer } from "./Footer";
+import {RichText} from 'prismic-reactjs';
 
 export const Layout = ({
   navigation,
   settings,
-  withProfile,
-  withSignUpForm,
   children,
 }) => {
+  console.log(navigation)
   return (
-    <div className="text-slate-700">
+    <div>
+      <div className="menu">
+        {navigation.data.links.map((item, i) => {
+          return(
+            <div className="menu-item" key={'menu'+i}>
+              <a href={item.link.url}>
+                <RichText render={item.label}/>
+              </a>
+            </div>
+          )
+        })}
+      </div>
       <main>{children}</main>
-      <Footer withSignUpForm={withSignUpForm} settings={settings} />
+      <Footer settings={settings} />
     </div>
   );
 };

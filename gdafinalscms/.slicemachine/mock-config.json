@@ -50,7 +50,14 @@
         }
       }
     },
-    "project": {}
+    "project": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "Text": {
