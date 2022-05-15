@@ -1,24 +1,50 @@
+html,body{
+  scroll-behavior: smooth;
+}
+
 .menu{
   padding: 10px 10px;
   display: flex;
   width: 100%;
   .menu-item{
     padding: 5px 20px;
-    border: 2px solid black;
-    border-radius: 20px;
     &:nth-child(2){
       display: block;
       margin: 0 auto;
+      background-color: #05CE81;
+      border: 2px solid black;
+      border-radius: 20px;
     }
     &:nth-child(3){
       margin-left: 160px;
+      background-color: #05CE81;
+      border: 2px solid black;
+      border-radius: 20px;
     }
   }
 }
 
+.hero{
+  height: 100vh;
+}
+
+.connect{
+  stroke-width: 2px;
+  stroke: #05CE81;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  display: none;
+  height: 80vh;
+}
+
+.slick-active .connect{
+  display: block;
+}
+
 
 .slick-slider{
-  margin-top: 14px;
+  margin-top: 10px;
   .slick-list {margin: 0 -24px;}
   .slick-slide>div {padding: 0 24px;}
   .slick-arrow{
@@ -38,7 +64,7 @@
     }
   }
   .slick-dots{
-    bottom: -70px;
+    bottom: -60px;
     li{
       width: 40px;
       text-align: center;
@@ -64,7 +90,7 @@
     }
   }
   .image{
-    height: 65vh;
+    height: 55vh;
     overflow: hidden;
     border: 1px solid black;
     img{
@@ -79,6 +105,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 14px;
+    font-size: 16px;
   }
   .name{
     flex-shrink: 1;
@@ -101,5 +128,37 @@
     color: #05CE81;
     margin-top: 10px;
     column-count: 2;
+  }
+}
+
+.index{
+  padding: 24px;
+  min-height: 100vh;
+  .title{
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+  .list{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    .index-item{
+      width: 33%;
+      display: flex;
+      border-top: 2px solid black;
+      padding: 14px 0;
+      .order{
+        font-size: 30px;
+        padding: 14px;
+      }
+      .info{
+        display: block;
+        text-transform: uppercase;
+        padding-left: 24px;
+        div{
+          display: block;
+        }
+      }
+    }
   }
 }

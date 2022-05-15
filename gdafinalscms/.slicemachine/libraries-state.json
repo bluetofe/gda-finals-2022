@@ -164,6 +164,104 @@
         },
         "screenshotPaths": {}
       },
+      "index_item": {
+        "library": "slices",
+        "id": "index_item",
+        "name": "IndexItem",
+        "description": "IndexItem",
+        "model": {
+          "id": "index_item",
+          "type": "SharedSlice",
+          "name": "IndexItem",
+          "description": "IndexItem",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "IndexItem",
+              "primary": {},
+              "items": {
+                "order": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Order",
+                    "placeholder": ""
+                  }
+                },
+                "name": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Name",
+                    "placeholder": ""
+                  }
+                },
+                "email": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Email",
+                    "placeholder": ""
+                  }
+                },
+                "website": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Website",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "index_item",
+            "items": [
+              {
+                "order": "repurpose user-centric metrics",
+                "name": "maximize mission-critical e-business",
+                "email": "implement compelling convergence",
+                "website": "streamline out-of-the-box mindshare"
+              },
+              {
+                "order": "synthesize user-centric e-business",
+                "name": "synthesize proactive infrastructures",
+                "email": "grow open-source e-markets",
+                "website": "synergize efficient interfaces"
+              },
+              {
+                "order": "strategize best-of-breed vortals",
+                "name": "extend dot-com markets",
+                "email": "innovate user-centric action-items",
+                "website": "engage scalable action-items"
+              },
+              {
+                "order": "enhance scalable channels",
+                "name": "engineer cross-media networks",
+                "email": "exploit synergistic metrics",
+                "website": "utilize best-of-breed technologies"
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/tofe/Documents/Gda Finals Website/gdafinalscms/.slicemachine/assets/slices/IndexItem/default/preview.png",
+            "width": 800,
+            "height": 48
+          }
+        }
+      },
       "quote": {
         "library": "slices",
         "id": "quote",

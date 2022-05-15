@@ -13,7 +13,7 @@ export const Layout = ({
         {navigation.data.links.map((item, i) => {
           return(
             <div className="menu-item" key={'menu'+i}>
-              <a href={item.link.url}>
+              <a href={item.link.url ? item.link.url : '#index'}>
                 <RichText render={item.label}/>
               </a>
             </div>
