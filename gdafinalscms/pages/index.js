@@ -10,40 +10,53 @@ import { Layout } from "../components/Layout";
 
 
 const Index = ({ projects, navigation, settings, index }) => {
-  console.log(index)
-  const [xPos, setXPos] = useState(50);
-  const [yPos, setYPos] = useState(50);
+  console.log(projects)
   const [elements, setElements] = useState(0);
-  const [order, setOrder] = useState(0);
   const inputEl = useRef(null);
+
+
   const orderEl = useRef(null);
+  const [order, setOrder] = useState(0);
+  const [hero, setHero] = useState(0);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
 
   useEffect(() => {
     setElements(inputEl.current.children);
-    setOrder(orderEl)
+    setOrder(orderEl.current.children[0].children[3].children)
+    setHero(orderEl.current)
+    window.addEventListener("scroll", handleScroll);
   });
+
+  var rand = Math.floor( Math.random() * 28 );
+
+
+
+
 
   const settingsSlider = {
     customPaging: function(i) {
       var arr = [].slice.call(elements);
       var con_el = arr.find(x => x.id === projects[i].data.order);
-      console.log(order)
+ 
       var xPos = con_el?.getBoundingClientRect().left
-      var yPos = con_el?.getBoundingClientRect().top
+      var yPos = con_el?.getBoundingClientRect().top + scrollPosition - hero.offsetHeight + 120
 
-     
-      // console.log(con_el.offsetTop)
+      var offSet = order[i]?.getBoundingClientRect()
+    
       return (
-        <a className="order" key={'order' + i}>
-          {projects[i].data.order.split("").map((item, i) => {
+        <div className="order" key={'order' + i}>
+          {projects[i].data.order.split("").map((item, index) => {
             return(
-              <>
-              <div key={'span'+ i} ref={orderEl}>{item}</div>
-              <svg className="connect"><line x1="0" y1="0" x2={xPos} y2={yPos}/></svg>
-              </>
+              <div key={'span'+ index}>{item}</div>
             )
           })}
-        </a>
+          <svg className="connect" style={{left: '-' + offSet?.left + 'px',height: yPos +'px', width:  offSet?.left +  xPos  + 'px'}}><line x1={offSet?.left + 20} y1="50" x2={xPos} y2={yPos}/></svg>
+        </div>
       );
     },
     dots: true,
@@ -55,6 +68,9 @@ const Index = ({ projects, navigation, settings, index }) => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '300px',
+    autoplay: true,
+    autoplaySpeed: 2000,
+    initialSlide: rand,
   };
 
   return (
@@ -62,7 +78,7 @@ const Index = ({ projects, navigation, settings, index }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div className="hero">
+      <div className="hero"  ref={orderEl}>
         <Slider {...settingsSlider}>
           {projects.map((item, i) => {
             return(

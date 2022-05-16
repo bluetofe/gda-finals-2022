@@ -4,7 +4,7 @@ import { PrismicPreview } from "@prismicio/next";
 
 import { repositoryName, linkResolver } from "../prismicio";
 
-import "../styles/globals.css";
+// import "../styles/globals.css";
 import "../styles/main.scss";
 import { Heading } from "../components/Heading";
 

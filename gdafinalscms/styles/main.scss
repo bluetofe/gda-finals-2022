@@ -1,11 +1,20 @@
 html,body{
   scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+a{
+  color: black;
+  text-decoration: none;
 }
 
 .menu{
   padding: 10px 10px;
   display: flex;
-  width: 100%;
+  width: calc(100% - 24px);
   .menu-item{
     padding: 5px 20px;
     &:nth-child(2){
@@ -32,10 +41,8 @@ html,body{
   stroke-width: 2px;
   stroke: #05CE81;
   position: absolute;
-  top: 50px;
-  left: 20px;
+  top: 0;
   display: none;
-  height: 80vh;
 }
 
 .slick-active .connect{
@@ -66,14 +73,16 @@ html,body{
   .slick-dots{
     bottom: -60px;
     li{
-      width: 40px;
+      width: 2vw;
       text-align: center;
     }
   }
   .slick-active .order{
     margin-top: -30px;
     div{
-      font-size: 40px;
+      font-size: 3vw;
+      background-color: white;
+      z-index: 999;
     }
   }
   .order {
@@ -83,9 +92,9 @@ html,body{
     position: absolute;
     transition: all 0.4s ease;
     div{
-      font-size: 30px;
+      font-size: 1.5vw;
       &:nth-child(2){
-        font-size: smaller;
+        font-size: 10px;
       }
     }
   }
@@ -132,8 +141,9 @@ html,body{
 }
 
 .index{
-  padding: 24px;
   min-height: 100vh;
+  margin-top: 24px;
+  margin-left: 10px;
   .title{
     font-size: 45px;
     text-transform: uppercase;
@@ -150,11 +160,13 @@ html,body{
       .order{
         font-size: 30px;
         padding: 14px;
+        width: 15%;
       }
       .info{
         display: block;
         text-transform: uppercase;
-        padding-left: 24px;
+        width: 85%;
+        word-wrap: break-word;
         div{
           display: block;
         }
