@@ -32,7 +32,6 @@ const Index = ({ projects, navigation, settings, index }) => {
     window.addEventListener("scroll", handleScroll);
   });
 
-  var rand = Math.floor( Math.random() * 28 );
 
 
 
@@ -70,7 +69,6 @@ const Index = ({ projects, navigation, settings, index }) => {
     centerPadding: '300px',
     autoplay: true,
     autoplaySpeed: 2000,
-    initialSlide: rand,
   };
 
   return (

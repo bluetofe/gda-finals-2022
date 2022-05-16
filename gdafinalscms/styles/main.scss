@@ -15,6 +15,9 @@ a{
   padding: 10px 10px;
   display: flex;
   width: calc(100% - 24px);
+  h3{
+    margin: 0;
+  }
   .menu-item{
     padding: 5px 20px;
     &:nth-child(2){
