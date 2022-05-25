@@ -68,7 +68,7 @@ const Index = ({ projects, navigation, settings, index }) => {
     centerMode: true,
     centerPadding: '300px',
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
   };
 
   return (
