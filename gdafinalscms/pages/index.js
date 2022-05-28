@@ -112,7 +112,7 @@ const Index = ({ projects, navigation, settings, index }) => {
                   <div className="info">
                     <div>{item.name}</div>
                     <div><a href={`mailto:${item.email}`}>Send E-mail</a></div>
-                    <div><a target="_blank" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@')}</a></div>
+                    <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@')}</a></div>
                   </div>
               </div>
             )
