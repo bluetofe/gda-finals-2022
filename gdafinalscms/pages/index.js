@@ -13,6 +13,7 @@ const Index = ({ projects, navigation, settings, index }) => {
   console.log(projects)
   const [elements, setElements] = useState(0);
   const inputEl = useRef(null);
+  const slider = useRef('');
 
 
   const orderEl = useRef(null);
@@ -31,6 +32,15 @@ const Index = ({ projects, navigation, settings, index }) => {
     setHero(orderEl.current)
     window.addEventListener("scroll", handleScroll);
   });
+
+  useEffect(() => {
+    var rand = Math.floor( Math.random() * 28 )
+    slider.current.slickGoTo(rand);
+    window.setInterval(function(){
+      var rand = Math.floor( Math.random() * 28 )
+      slider.current.slickGoTo(rand);
+    }, 5000);
+  }, [])
 
 
 
@@ -68,7 +78,7 @@ const Index = ({ projects, navigation, settings, index }) => {
     centerMode: true,
     centerPadding: '300px',
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
   };
 
   return (
@@ -77,7 +87,7 @@ const Index = ({ projects, navigation, settings, index }) => {
       settings={settings}
     >
       <div className="hero"  ref={orderEl}>
-        <Slider {...settingsSlider}>
+        <Slider {...settingsSlider} ref={slider}>
           {projects.map((item, i) => {
             return(
               <div className="project" key={'project'+i}>

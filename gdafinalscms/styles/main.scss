@@ -3,6 +3,11 @@
   src: url(./AUTHENTICSans-90.otf);
 }
 
+@font-face {
+  font-family: Cirrus;
+  src: url(./CirrusCumulus.ttf);
+}
+
 
 html,body{
   scroll-behavior: smooth;
@@ -21,7 +26,15 @@ a{
 .menu{
   padding: 10px 10px;
   display: flex;
+  align-items: center;
   width: calc(100% - 24px);
+  .logo{
+    font-size: 28px;
+    span{
+      font-family: Cirrus;
+      // font-weight: 900;
+    }
+  }
   h3{
     margin: 0;
   }
@@ -67,11 +80,14 @@ a{
   stroke: #05CE81;
   position: absolute;
   top: 0;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
 .slick-active .connect{
-  display: block;
+  visibility: visible;
+  opacity: 1
 }
 
 
@@ -99,10 +115,21 @@ a{
     bottom: -60px;
     &:before{
       content: "(";
-      margin-right: 10px;
+      font-family: Cirrus;
+      font-size: 3vw;
+      position: absolute;
+      margin-top: -1.5vw;
+      margin-left: -1.5vw;
+      font-weight: 900;
     }
     &:after{
       content: ")";
+      font-family: Cirrus;
+      font-size: 3vw;
+      position: absolute;
+      margin-left: -1vw;
+      margin-top: -0.5vw;
+      font-weight: 900;
     }
     li{
       width: 2vw;

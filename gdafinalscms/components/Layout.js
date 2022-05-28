@@ -10,6 +10,11 @@ export const Layout = ({
   return (
     <div>
       <div className="menu">
+        <div className="menu-item logo">
+          <a href={'/'}>
+            From <span>&#40;</span>A<span>&#41;</span> to <span>&#40;</span>X<span>&#41;</span>
+          </a>
+        </div>
         {navigation.data.links.map((item, i) => {
           return(
             <div className="menu-item" key={'menu'+i}>
