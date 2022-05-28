@@ -1,12 +1,12 @@
 @font-face {
   font-family: Auth;
-  src: url(AUTHENTICSans-90.otf);
+  src: url(./AUTHENTICSans-90.otf);
 }
 
 
 html,body{
   scroll-behavior: smooth;
-  font-family: Auth;
+  font-family: Auth, sans-serif;
   width: 100vw;
   overflow-x: hidden;
   margin: 0;
@@ -27,18 +27,33 @@ a{
   }
   .menu-item{ 
     padding: 5px 20px;
+    transition: all 0.4s ease-in-out;
     &:nth-child(2){
       display: block;
       margin: 0 auto;
       background-color: #05CE81;
       border: 2px solid black;
       border-radius: 20px;
+      &:hover{
+        background-color: rgb(252, 242, 216);
+        border-color: #05CE81;
+        a{
+          color: #05CE81;
+        }
+      }
     }
     &:nth-child(3){
       margin-left: 160px;
       background-color: #05CE81;
       border: 2px solid black;
       border-radius: 20px;
+      &:hover{
+        background-color: rgb(252, 242, 216);
+        border-color: #05CE81;
+        a{
+          color: #05CE81;
+        }
+      }
     }
   }
 }
@@ -82,6 +97,13 @@ a{
   }
   .slick-dots{
     bottom: -60px;
+    &:before{
+      content: "(";
+      margin-right: 10px;
+    }
+    &:after{
+      content: ")";
+    }
     li{
       width: 2vw;
       text-align: center;
@@ -89,10 +111,14 @@ a{
   }
   .slick-active .order{
     margin-top: -30px;
+    margin-left: -10px;
     div{
       font-size: 3vw;
-      background-color: rgb(255, 255, 236);
+      background-color: rgb(252, 242, 216);
       z-index: 999;
+      &:nth-child(2){
+        font-size: 14px;
+      }
     }
   }
   .order {
@@ -103,6 +129,7 @@ a{
     transition: all 0.4s ease;
     div{
       font-size: 1.5vw;
+      z-index: 999;
       &:nth-child(2){
         font-size: 10px;
       }
@@ -114,8 +141,8 @@ a{
     border: 1px solid black;
     img{
       object-fit: cover;
-      min-width: 100%;
-      min-height: 100%;
+      width: 100%;
+      height: 100%;
     }
   }
   .info{
@@ -147,6 +174,10 @@ a{
     color: #05CE81;
     margin-top: 10px;
     column-count: 2;
+    p{
+      margin: 0;
+      line-height: 1.3;
+    }
   }
 }
 
@@ -171,6 +202,13 @@ a{
         font-size: 30px;
         padding: 14px;
         width: 15%;
+        display: flex;
+        align-items: flex-end;
+        div{
+          &:nth-child(2){
+            font-size: 14px;
+          }
+        }
       }
       .info{
         display: block;
@@ -179,6 +217,13 @@ a{
         word-wrap: break-word;
         div{
           display: block;
+          a{
+            transition: all 0.4s ease-in-out;
+            &:hover{
+              color: #05CE81;
+              letter-spacing: 0.1em;
+            }
+          }
         }
       }
     }

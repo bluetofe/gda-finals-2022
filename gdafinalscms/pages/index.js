@@ -102,15 +102,22 @@ const Index = ({ projects, navigation, settings, index }) => {
           {index.data.slices[0].items.map((item, i) => {
             return(
               <div className="index-item" id={item.order} key={'index-item' + i}>
-                  <div className="order">{item.order}</div>
+                  <div className="order">
+                    {item.order?.split("").map((elem, index) => {
+                      return(
+                        <div key={'span'+ index}>{elem}</div>
+                      )
+                    })}
+                  </div>
                   <div className="info">
                     <div>{item.name}</div>
-                    <div>{item.email}</div>
-                    <div>{item.website}</div>
+                    <div><a href={`mailto:${item.email}`}>Send E-mail</a></div>
+                    <div><a target="_blank" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@')}</a></div>
                   </div>
               </div>
             )
           })}
+          <div className="index-item"></div>
         </div>
       </div>
       
