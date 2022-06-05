@@ -64,7 +64,7 @@ const Index = ({ projects, navigation, settings, index }) => {
               <div key={'span'+ index}>{item}</div>
             )
           })}
-          <svg className="connect" style={{left: '-' + offSet?.left + 'px',height: yPos +'px', width:  offSet?.left +  xPos  + 'px'}}><line x1={offSet?.left + 20} y1="50" x2={xPos} y2={yPos}/></svg>
+          <svg className="connect" style={{left: '-' + offSet?.left + 'px',height: yPos +'px', width:  offSet?.left +  xPos  + 'px'}}><line x1={offSet?.left + 15} y1="50" x2={xPos+40} y2={yPos+25}/></svg>
         </div>
       );
     },
@@ -79,6 +79,14 @@ const Index = ({ projects, navigation, settings, index }) => {
     centerPadding: '300px',
     autoplay: true,
     autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          centerPadding: '24px',
+        }
+      },
+    ]
   };
 
   return (
