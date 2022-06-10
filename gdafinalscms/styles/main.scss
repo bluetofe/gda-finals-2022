@@ -18,12 +18,17 @@ html,body{
 }
 
 body{
-  background-color: rgb(255, 251, 240);
+  background-color: #AEFFAE;
 }
 
 a{
   color: black;
   text-decoration: none;
+}
+
+h1{
+  margin: 0;
+  font-size: 48px;
 }
 
 .menu{
@@ -42,32 +47,26 @@ a{
     margin: 0;
   }
   .menu-item{ 
-    padding: 5px 20px;
+    padding: 5px 5px 2px 5px;
     transition: all 0.4s ease-in-out;
-    &:nth-child(2){
+    &:nth-child(2){                               //----------Handout
       display: block;
-      margin: 0 auto;
-      background-color: #05CE81;
-      border: 2px solid black;
-      border-radius: 20px;
+      margin: 0 0 0 auto;
+      border-bottom: 2px solid transparent;
       &:hover{
-        background-color: rgb(255, 251, 240);
-        border-color: #05CE81;
-        a{
-          color: #05CE81;
-        }
+        border-bottom: 2px solid #f93822;
       }
     }
     &:nth-child(3){
       margin-left: 160px;
-      background-color: #05CE81;
+      background-color: #AEFFAE;
       border: 2px solid black;
       border-radius: 20px;
       &:hover{
-        background-color: rgb(255, 251, 240);
-        border-color: #05CE81;
+        background-color: rgb(200, 200, 200);
+        border-color: #AEFFAE;
         a{
-          color: #05CE81;
+          color: #AEFFAE;
         }
       }
     }
@@ -81,7 +80,7 @@ a{
 
 .connect{
   stroke-width: 2px;
-  stroke: #05CE81;
+  stroke: #f93822;
   position: absolute;
   top: 0;
   visibility: hidden;
@@ -110,39 +109,43 @@ a{
       position: absolute;
       right: 10px;
       z-index: 9;
+      opacity: 0;
     }
     &.slick-prev{
       position: absolute;
       left: 10px;
       z-index: 9;
+      opacity: 0;
     }
     &.slick-next:before, &.slick-prev:before{
-      color:#05CE81;
+      color:#f93822;
     }
   }
   .slick-dots{
-
+                               //----------brackets
     bottom: -60px;
     &:before{
       content: "(";
       font-family: Cirrus;
-      font-size: 3vw;
+      font-size: 4vw;
       position: absolute;
       margin-top: -1.5vw;
       margin-left: -1.5vw;
-      font-weight: 900;
+      font-weight: 300;
+      color: #f93822;
     }
     &:after{
       content: ")";
       font-family: Cirrus;
-      font-size: 3vw;
+      font-size: 4vw;
       position: absolute;
       margin-left: -1vw;
-      margin-top: -0.5vw;
-      font-weight: 900;
+      margin-top: -1.5vw;
+      font-weight: 300;
+      color: #f93822;
     }
     li{
-      width: 2vw;
+      width: 2.5vw;
       text-align: center;
     }
   }
@@ -150,12 +153,7 @@ a{
     margin-top: -30px;
     margin-left: -10px;
     div{
-      font-size: 3vw;
-      background-color: rgb(255, 251, 240);
-      z-index: 999;
-      &:nth-child(2){
-        font-size: 14px;
-      }
+      background-color: #AEFFAE;
     }
   }
   .order {
@@ -168,17 +166,20 @@ a{
       font-size: 1.5vw;
       z-index: 999;
       &:nth-child(2){
-        font-size: 10px;
+        font-family: Cirrus;
+        margin-bottom: -5px;
+        // font-size: 1.5vw;
       }
     }
   }
   .image{
-    height: 55vh;
+    width: auto;
+    height: 58vh;
     overflow: hidden;
-    border: 1px solid black;
+    // border: 1px solid black;
     img{
-      
-      object-fit: cover;
+      object-position: center center;
+      object-fit: contain;
       width: 100%;
       height: 100%;
     }
@@ -196,6 +197,7 @@ a{
     flex-shrink: 1;
     padding-right: 24px;
     font-size: 20px;
+    color: #f93822;
     // text-transform: uppercase;
   }
   .line{
@@ -206,17 +208,29 @@ a{
     flex-shrink: 1;
     padding-left: 24px;
     font-size: 20px;
+    color: #f93822;
     // text-transform: uppercase;
   }
   .description{
     width: 100%;
-    color: #05CE81;
+    color: black;
     margin-top: 10px;
     column-count: 2;
     p{
       margin: 0;
       line-height: 1.3;
     }
+  }
+}
+
+.project{
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slick-active{
+  .project{
+    opacity: 1;
   }
 }
 
@@ -245,7 +259,9 @@ a{
         align-items: flex-end;
         div{
           &:nth-child(2){
-            font-size: 14px;
+            font-family: Cirrus;
+            margin-bottom: -5px;
+            // font-size: 14px;
           }
         }
       }
@@ -259,8 +275,7 @@ a{
           a{
             transition: all 0.4s ease-in-out;
             &:hover{
-              color: #05CE81;
-              letter-spacing: 0.1em;
+              color: #f93822;
             }
           }
         }
@@ -270,41 +285,87 @@ a{
 }
 
 @media only screen and (max-width: 900px) {
-  body {
-    background-color: lightblue;
-    scroll-behavior: smooth;
-    font-family: Auth, sans-serif;
-    width: 100vw;
-
-  }
 
   .menu{
-
-    display: inline-block;
     .logo{
       text-align: center;
-      font-size: 50px;
+      font-size: 22px;
     }
-
     .menu-item{ 
-      padding: 20px 20px;
       &:nth-child(2){
         font-size: 30px;
-        margin-top: 20px;
-        margin-left: 120px ;
-        margin-right: 120px ;
         text-align: center;
-
-      }
-      &:nth-child(3){
-        font-size: 30px;
-        margin-left: 120px ;
-        margin-right: 120px ;
-        margin-top: 20px;
-        text-align: center;
-
+        font-size: 18px;
       }
     }
   }
+
+  .slick-slider{
+    .image{
+      height: 28vh;
+    }
+    .name, .title{
+      padding: 5px 0;
+    }
+    .line{
+      width: 100%;
+    }
+    .info{
+      flex-direction: column;
+      text-align: left;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .description{
+      column-count: 1;
+      p{
+        margin-bottom: 14px;
+      }
+    }
+
+    .order div{
+      font-size: 17px;
+    }
+
+    .slick-dots{
+      width: 30px;
+      bottom: -80px;
+      li{
+        margin-bottom: 1px;
+      }
+      &:before{
+        margin-left: 1px;
+        margin-top: -3vw;
+      }
+      &:after{
+        margin-left: 1vw;
+        margin-top: 3vw;
+      }
+      .slick-active .order{
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+    }
+  }
+
  
+
+  .project{
+    margin-left: 30px;
+    width: calc(100% - 30px)!important;
+  }
+
+  .index .list{
+    display: inline-block;
+    width: 98%;
+  }
+  .index  .list .index-item {
+    width: 100%;
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+
 }

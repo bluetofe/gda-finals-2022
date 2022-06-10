@@ -33,14 +33,14 @@ const Index = ({ projects, navigation, settings, index }) => {
     window.addEventListener("scroll", handleScroll);
   });
 
-  useEffect(() => {
-    var rand = Math.floor( Math.random() * 28 )
-    slider.current.slickGoTo(rand);
-    window.setInterval(function(){
-      var rand = Math.floor( Math.random() * 28 )
-      slider.current.slickGoTo(rand);
-    }, 5000);
-  }, [])
+  // useEffect(() => {
+  //   var rand = Math.floor( Math.random() * 28 )
+  //   slider.current.slickGoTo(rand);
+  //   window.setInterval(function(){
+  //     var rand = Math.floor( Math.random() * 28 )
+  //     slider.current.slickGoTo(rand);
+  //   }, 5000);
+  // }, [])
 
 
 
@@ -75,10 +75,11 @@ const Index = ({ projects, navigation, settings, index }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // variableWidth: true,
     centerMode: true,
     centerPadding: '300px',
-    autoplay: true,
-    autoplaySpeed: 5000,
+    // autoplay: true,
+    // autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 900,
@@ -130,7 +131,7 @@ const Index = ({ projects, navigation, settings, index }) => {
                   <div className="info">
                     <div>{item.name}</div>
                     <div><a href={`mailto:${item.email}`}>Send E-mail</a></div>
-                    <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@')}</a></div>
+                    <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@').replace('www.','')}</a></div>
                   </div>
               </div>
             )
