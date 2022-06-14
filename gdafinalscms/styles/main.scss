@@ -299,7 +299,7 @@ h1{
   }
 
   .spacer{
-    height: 200px;
+    height: 100px;
   }
 
   .menu{
@@ -374,6 +374,10 @@ h1{
   .project{
     margin-left: 30px;
     width: calc(100% - 30px)!important;
+  }
+
+  .index{
+    margin-top: 50px;
   }
 
   .index .list{
