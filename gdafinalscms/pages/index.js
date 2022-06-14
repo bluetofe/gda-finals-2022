@@ -140,6 +140,7 @@ const Index = ({ projects, navigation, settings, index }) => {
           <div className="index-item"></div>
         </div>
       </div>
+      <div className="spacer"></div>
       
     </Layout>
   );
