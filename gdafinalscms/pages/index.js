@@ -33,18 +33,14 @@ const Index = ({ projects, navigation, settings, index }) => {
     window.addEventListener("scroll", handleScroll);
   });
 
-  // useEffect(() => {
-  //   var rand = Math.floor( Math.random() * 28 )
-  //   slider.current.slickGoTo(rand);
-  //   window.setInterval(function(){
-  //     var rand = Math.floor( Math.random() * 28 )
-  //     slider.current.slickGoTo(rand);
-  //   }, 5000);
-  // }, [])
-
-
-
-
+  useEffect(() => {
+    var rand = Math.floor( Math.random() * 28 )
+    slider.current.slickGoTo(rand);
+    window.setInterval(function(){
+      var rand = Math.floor( Math.random() * 28 )
+      slider.current.slickGoTo(rand);
+    }, 5000);
+  }, [])
 
 
   const settingsSlider = {
@@ -53,7 +49,7 @@ const Index = ({ projects, navigation, settings, index }) => {
       var con_el = arr.find(x => x.id === projects[i].data.order);
  
       var xPos = con_el?.getBoundingClientRect().left
-      var yPos = con_el?.getBoundingClientRect().top + scrollPosition - hero.offsetHeight + 120
+      var yPos = con_el?.getBoundingClientRect().top + scrollPosition - hero.offsetHeight + 10
 
       var offSet = order[i]?.getBoundingClientRect()
     
@@ -75,9 +71,9 @@ const Index = ({ projects, navigation, settings, index }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // variableWidth: true,
+    variableWidth: true,
     centerMode: true,
-    centerPadding: '300px',
+    // centerPadding: '300px',
     // autoplay: true,
     // autoplaySpeed: 5000,
     responsive: [
@@ -100,6 +96,14 @@ const Index = ({ projects, navigation, settings, index }) => {
           {projects.map((item, i) => {
             return(
               <div className="project" key={'project'+i}>
+                <a className="mobile-order" href={'#'+ item.data.order}>
+                  {/* {item.data.order} */}
+                  {item.data.order?.split("").map((elem, index) => {
+                    return(
+                      <div key={'span'+ index}>{elem}</div>
+                    )
+                  })}
+                </a>
                 <div className="image"><img src={item.data.image.url}/></div>
                 <div className="info">
                   <div className="name">{item.data.name}</div>

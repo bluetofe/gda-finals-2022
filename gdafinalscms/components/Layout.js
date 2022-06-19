@@ -12,7 +12,8 @@ export const Layout = ({
       <div className="menu">
         <div className="menu-item logo">
           <a href={'/'}>
-            From <span>&#40;</span>A<span>&#41;</span> to <span>&#40;</span>X<span>&#41;</span>
+            <img src="/logo2.svg"/>
+            {/* From <span>&#40;</span>A<span>&#41;</span> to <span>&#40;</span>X<span>&#41;</span> */}
           </a>
         </div>
         {navigation.data.links.map((item, i) => {

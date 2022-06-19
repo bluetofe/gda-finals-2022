@@ -33,15 +33,18 @@ h1{
 }
 
 .menu{
-  padding: 10px 10px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   width: calc(100% - 24px);
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(174, 255, 174, 0.5);
+  top: 0;
   .logo{
-    font-size: 28px;
-    span{
-      font-family: Cirrus;
-      // font-weight: 900;
+    img{
+      height: 53px;
+      width: auto;
     }
   }
   h3{
@@ -75,9 +78,12 @@ h1{
 }
 
 .hero{
-  
-  height: 100vh;
-  // margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  margin-bottom: 20vh;
+  overflow-y: visible;
 }
 
 .connect{
@@ -101,10 +107,13 @@ h1{
 
 
 .slick-slider{
-
-  margin-top: 10px;
-  .slick-list {margin: 0 -24px;}
-  .slick-slide>div {padding: 0 24px;}
+  margin-top: 130px;
+  .slick-list {margin: 0 -48px;}
+  .slick-slide>div {
+    padding: 0 48px;
+    width: 1100px;
+    // border: 1px solid red;
+  }
   .slick-arrow{
     margin-top: -20px;
     &.slick-next{
@@ -154,9 +163,6 @@ h1{
   .slick-active .order{
     margin-top: -30px;
     margin-left: -10px;
-    div{
-      // background-color: #AEFFAE;
-    }
   }
   .order {
     display: flex;
@@ -179,13 +185,14 @@ h1{
     }
   }
   .image{
-    width: auto;
+    width: 100%;
+    // border: 1px solid blue;
     height: 58vh;
     overflow: hidden;
     // border: 1px solid black;
     img{
-      object-position: bottom left;
-      object-fit: contain;
+      object-position: center left;
+      object-fit: cover;
       width: 100%;
       height: 100%;
     }
@@ -291,11 +298,56 @@ h1{
   }
 }
 
+.mobile-order{
+  display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+  .slick-slide:nth-child(odd){
+    .mobile-order{
+      justify-content: flex-end;
+    }
+  }
+  .mobile-order{
+    display: flex;
+    color: #f93822;
+    font-size: 24px;
+    div{
+      z-index: 999;
+      &:nth-child(2){
+        font-family: Cirrus;
+        margin-top: 5px;
+        -webkit-text-stroke: 1.5px #f93822;
+      }
+    }
+  }
+  .slick-slider{
+    margin-top: 100px;
+    height: 80vh;
+    .slick-slide>div {
+      padding: 0 48px;
+      width: 95vw;
+    }
+  }
+  .slick-dots{
+    display: none!important;
+  }
+  .hero{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    margin-bottom: 20vh;
+    overflow-y: visible;
+  }
+}
+
 @media only screen and (max-width: 900px) {
 
   html, body{
     height: 100vh;
     overflow-y: scroll;
+    scroll-padding-top: 75px;
   }
 
   .spacer{
@@ -305,7 +357,9 @@ h1{
   .menu{
     .logo{
       text-align: center;
-      font-size: 22px;
+      img{
+        height: 40px;
+      }
     }
     .menu-item{ 
       &:nth-child(2){
