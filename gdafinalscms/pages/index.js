@@ -49,7 +49,7 @@ const Index = ({ projects, navigation, settings, index }) => {
       var con_el = arr.find(x => x.id === projects[i].data.order);
  
       var xPos = con_el?.getBoundingClientRect().left
-      var yPos = con_el?.getBoundingClientRect().top + scrollPosition - hero.offsetHeight + 10
+      var yPos = con_el?.getBoundingClientRect().top + scrollPosition - hero.offsetHeight - 50
 
       var offSet = order[i]?.getBoundingClientRect()
     
@@ -91,61 +91,61 @@ const Index = ({ projects, navigation, settings, index }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div className="hero"  ref={orderEl}>
-        <Slider {...settingsSlider} ref={slider}>
-          {projects.map((item, i) => {
-            return(
-              <div className="project" key={'project'+i}>
-                <a className="mobile-order" href={'#'+ item.data.order}>
-                  {/* {item.data.order} */}
-                  {item.data.order?.split("").map((elem, index) => {
-                    return(
-                      <div key={'span'+ index}>{elem}</div>
-                    )
-                  })}
-                </a>
-                <div className="image"><img src={item.data.image.url}/></div>
-                <div className="info">
-                  <div className="name">{item.data.name}</div>
-                  <div className="line"></div>
-                  <div className="title">{item.data.title}</div>
-                  <div className="description">
-                    <RichText render={item.data.description}/>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </Slider>
-      </div>
-
-      <div id="index" className="index">
-        <div className="title"><RichText render={index.data.title}/></div>
-        <div className="list" ref={inputEl}>
-          {index.data.slices[0].items.map((item, i) => {
-            return(
-              <div className="index-item" id={item.order} key={'index-item' + i}>
-                  <div className="order">
-                    {item.order?.split("").map((elem, index) => {
+      <div className="scroll"> </div>
+        <div className="hero"  ref={orderEl}>
+          <Slider {...settingsSlider} ref={slider}>
+            {projects.map((item, i) => {
+              return(
+                <div className="project" key={'project'+i}>
+                  <a className="mobile-order" href={'#'+ item.data.order}>
+                    {/* {item.data.order} */}
+                    {item.data.order?.split("").map((elem, index) => {
                       return(
                         <div key={'span'+ index}>{elem}</div>
                       )
                     })}
-                  </div>
+                  </a>
+                  <div className="image"><img src={item.data.image.url}/></div>
                   <div className="info">
-                    <div>{item.name}</div>
-                    <div><a href={`mailto:${item.email}`}>Send E-mail</a></div>
-                    <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@').replace('www.','')}</a></div>
+                    <div className="name">{item.data.name}</div>
+                    <div className="line"></div>
+                    <div className="title">{item.data.title}</div>
+                    <div className="description">
+                      <RichText render={item.data.description}/>
+                    </div>
                   </div>
-              </div>
-            )
-          })}
-          <div className="index-item"></div>
-          <div className="index-item"></div>
+                </div>
+              )
+            })}
+          </Slider>
         </div>
-      </div>
-      <div className="spacer"></div>
-      
+
+        <div id="index" className="index">
+          <div className="title"><RichText render={index.data.title}/></div>
+          <div className="list" ref={inputEl}>
+            {index.data.slices[0].items.map((item, i) => {
+              return(
+                <div className="index-item" id={item.order} key={'index-item' + i}>
+                    <div className="order">
+                      {item.order?.split("").map((elem, index) => {
+                        return(
+                          <div key={'span'+ index}>{elem}</div>
+                        )
+                      })}
+                    </div>
+                    <div className="info">
+                      <div>{item.name}</div>
+                      <div><a href={`mailto:${item.email}`}>Send E-mail</a></div>
+                      <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@').replace('www.','')}</a></div>
+                    </div>
+                </div>
+              )
+            })}
+            <div className="index-item"></div>
+            <div className="index-item"></div>
+          </div>
+        </div>
+        <div className="spacer"></div>
     </Layout>
   );
 };

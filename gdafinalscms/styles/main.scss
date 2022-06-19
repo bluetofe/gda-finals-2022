@@ -12,10 +12,13 @@ html,body{
   scroll-behavior: smooth;
   font-family: Auth, sans-serif;
   width: 100vw;
-  // height: 100vh;
-  // overflow-y: scroll;
   overflow-x: hidden;
   margin: 0;
+}
+
+.scroll{
+  position: relative;
+  height: 100vh;
 }
 
 body{
@@ -82,8 +85,11 @@ h1{
   flex-direction: column;
   justify-content: center;
   height: 80vh;
-  margin-bottom: 20vh;
+  margin-bottom: 25vh;
   overflow-y: visible;
+  top: 10px;
+  position: absolute;
+  width: 100vw;
 }
 
 .connect{
@@ -107,7 +113,8 @@ h1{
 
 
 .slick-slider{
-  margin-top: 130px;
+  height: 100vh;
+  margin-top: 150px;
   .slick-list {margin: 0 -48px;}
   .slick-slide>div {
     padding: 0 48px;
@@ -134,7 +141,7 @@ h1{
   }
   .slick-dots{
                                //----------brackets
-    bottom: -60px;
+    bottom: -40px;
     &:before{
       content: "(";
       font-family: Cirrus;
@@ -324,6 +331,7 @@ h1{
   .slick-slider{
     margin-top: 65px;
     height: 80vh;
+    overflow-y: hidden;
     .slick-slide>div {
       padding: 0 0px;
       width: 90vw;
