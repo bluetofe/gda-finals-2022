@@ -1,7 +1,4 @@
 import React, {useRef,useEffect, useState} from "react";
-import NextImage from "next/image";
-import { PrismicLink, PrismicText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
 import {RichText} from 'prismic-reactjs';
 import Slider from "react-slick";
 
@@ -39,7 +36,7 @@ const Index = ({ projects, navigation, settings, index }) => {
     window.setInterval(function(){
       var rand = Math.floor( Math.random() * 28 )
       slider.current.slickGoTo(rand);
-    }, 5000);
+    }, 8000);
   }, [])
 
 
@@ -81,6 +78,7 @@ const Index = ({ projects, navigation, settings, index }) => {
         breakpoint: 900,
         settings: {
           centerPadding: '24px',
+          variableHeight: true,
         }
       },
     ]
@@ -124,6 +122,7 @@ const Index = ({ projects, navigation, settings, index }) => {
           <div className="title"><RichText render={index.data.title}/></div>
           <div className="list" ref={inputEl}>
             {index.data.slices[0].items.map((item, i) => {
+              console.log(item.website.includes('http://'))
               return(
                 <div className="index-item" id={item.order} key={'index-item' + i}>
                     <div className="order">
@@ -135,8 +134,12 @@ const Index = ({ projects, navigation, settings, index }) => {
                     </div>
                     <div className="info">
                       <div>{item.name}</div>
-                      <div><a href={`mailto:${item.email}`}>Send E-mail</a></div>
-                      <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@').replace('www.','')}</a></div>
+                      <div><a href={`mailto:${item.email}`}>Send email</a></div>
+                      {item.website.includes('http://') ? 
+                        <div><a target="_blank" rel="noreferrer" href={`${item.website}`}>{item.website?.replace('www.instagram.com/', '@').replace('www.','').replace('http://','')}</a></div>
+                      :
+                        <div><a target="_blank" rel="noreferrer" href={`https://${item.website}`}>{item.website?.replace('www.instagram.com/', '@').replace('www.','').replace('http://`','')}</a></div>
+                      }
                     </div>
                 </div>
               )
