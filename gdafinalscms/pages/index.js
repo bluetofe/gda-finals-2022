@@ -36,7 +36,7 @@ const Index = ({ projects, navigation, settings, index }) => {
     window.setInterval(function(){
       var rand = Math.floor( Math.random() * 28 )
       slider.current.slickGoTo(rand);
-    }, 8000);
+    }, 10000);
   }, [])
 
 

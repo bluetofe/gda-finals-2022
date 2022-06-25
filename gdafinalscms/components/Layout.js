@@ -12,7 +12,7 @@ export const Layout = ({
       <div className="menu">
         <div className="menu-item logo">
           <a href={'/'}>
-            <img src="/title_final.svg"/>
+            <img src="/logo33.svg"/>
             {/* From <span>&#40;</span>A<span>&#41;</span> to <span>&#40;</span>X<span>&#41;</span> */}
           </a>
         </div>
